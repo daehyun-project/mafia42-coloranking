@@ -60,7 +60,8 @@ def hex_to_rgb(hex_color):
 
 
 def calculate_black_closeness(r, g, b):
-    brightness = (0.299 * r + 0.587 * g + 0.114 * b) / 255.0
+
+    brightness = (0.33 * r + 0.33 * g + 0.33 * b) / 255.0
     black_closeness = (1 - brightness) * 100
 
     return black_closeness
@@ -172,6 +173,7 @@ def main():
             formatted_hex_value = hex_value.upper().replace('0XFF', '')
 
             r, g, b = hex_to_rgb(formatted_hex_value)
+
             closeness = calculate_black_closeness(r, g, b)
             closeness = round(closeness, 4)
 
